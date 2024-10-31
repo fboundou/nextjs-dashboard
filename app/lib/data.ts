@@ -11,7 +11,6 @@ import { formatCurrency } from "./utils";
 
 export async function fetchRevenue() {
   try {
-    // Fred test
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
@@ -49,6 +48,10 @@ export async function fetchLatestInvoices() {
   }
 }
 
+/*Parallel data fetching
+A common way to avoid waterfalls is to initiate all data requests at the same time - in parallel.
+In JavaScript, you can use the Promise.all() or Promise.allSettled() functions to initiate all promises at the same time. 
+For example, in data.ts, we're using Promise.all() in the fetchCardData() function:*/
 export async function fetchCardData() {
   try {
     // You can probably combine these into a single SQL query
